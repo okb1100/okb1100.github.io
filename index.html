@@ -32,6 +32,8 @@
         margin: 0;
         padding: 0;
         font-family: "Poppins", sans-serif;
+        background-color: #f2f1ef;
+        overflow-x: hidden;
       }
 
       @keyframes fadeIn {
@@ -44,16 +46,15 @@
       }
 
       .main {
-        background-color: #f2f1ef;
-        opacity: 1;
-        color: #333;
-        background-size: 70px 123px;
-        background-position: 0 0, 0 0, 35px 61px, 35px 61px, 0 0, 35px 61px;
-        animation: move 15s linear infinite;
+        /* background-size: 70px 123px; */
+        /* background-position: 0 0, 0 0, 35px 61px, 35px 61px, 0 0, 35px 61px; */
+        /* animation: move 15s linear infinite; */
       }
 
-      .main * {
+      .footer {
         animation: fadeIn 1s ease-in-out;
+        animation-delay: 1s;
+        animation-fill-mode: both;
       }
 
       @keyframes move {
@@ -66,13 +67,84 @@
         }
       }
       .main {
+        animation: fadeIn 1s ease-in-out;
+        opacity: 1;
+        color: #111;
         flex: 1;
         width: 100vw;
         height: 100vh;
         display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
+      }
+
+      .header {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5%;
+        animation: goTop 1s;
+        animation-timing-function: cubic-bezier(0.5, 0.885, 0.6, 1.22);
+        animation-delay: 1s;
+        animation-fill-mode: both;
+      }
+
+      .bottom {
+        display: flex;
+        flex: 1;
+        width: 90vw;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 5vh;
+        animation: fadeIn 600ms ease-in-out;
+        animation-delay: 1.4s;
+        animation-fill-mode: both;
+      }
+
+      .bottom > * {
+        flex: 1;
+        background-color: #f2f2f2;
+        width: 40vw;
+        height: 60vh;
+        margin: 0 16px;
+        padding: 0 16px;
+        box-shadow: -5px -5px 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+      }
+
+      .scrollWrapper {
+        position: relative;
+        height: 50vh;
+        flex-direction: column;
+        overflow-y: scroll;
+      }
+
+      .scrollWrapper::-webkit-scrollbar-track,
+      .bottom::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0);
+      }
+
+      .scrollWrapper::-webkit-scrollbar,
+      .bottom::-webkit-scrollbar {
+        width: 2px;
+        background: rgba(0, 0, 0, 0);
+      }
+
+      .scrollWrapper::-webkit-scrollbar-thumb,
+      .bottom::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #d2d2d2;
+      }
+
+      @keyframes goTop {
+        0% {
+          top: 35vh;
+        }
+        100% {
+          top: 0px;
+        }
       }
 
       a {
@@ -90,101 +162,315 @@
         margin-top: 0;
         color: #565656;
       }
+
+      @media screen and (min-width: 1440px) {
+        .bottom {
+          width: 80vw;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .bottom {
+          height: 80vh;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          width: auto;
+          overflow-y: scroll;
+          padding-top: 0;
+          margin-top: 5vh;
+        }
+        .bottom > * {
+          width: 80vw;
+          height: auto;
+          margin-bottom: 32px;
+          box-shadow: none;
+        }
+        .scrollWrapper {
+          height: auto;
+        }
+      }
+      h3 {
+        margin-block-end: 0;
+      }
+
+      .project p {
+        font-size: 14px;
+        margin-block-start: 0;
+        margin-inline-start: 0.5em;
+      }
+
+      .main,
+      body,
+      .bottom > *,
+      a,
+      .subtitle {
+        transition: color, background-color 1s ease-out;
+      }
+
+      body.dark {
+        background-color: #111;
+        color: #e9e9e9;
+      }
+
+      body.dark .main,
+      body.dark,
+      body.dark .subtitle {
+        color: #e9e9e9;
+      }
+
+      body.dark a {
+        color: rgb(158, 204, 233);
+      }
+
+      body.dark .bottom > * {
+        background-color: #171717;
+      }
+
+      small {
+        font-size: 0.8rem;
+      }
     </style>
   </head>
   <body>
     <div class="main">
-      <h1>Oğuzcan Küçükbayrak</h1>
-      <h5 class="subtitle">Fullstack Developer</h5>
-      <div class="links-container">
-        <a href="https://github.com/okb1100">
-          <!-- GITHUB ICON -->
-          <svg
-            width="24"
-            height="24"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </a>
-
-        <a
-          href="https://www.linkedin.com/in/o%C4%9Fuzcan-k%C3%BC%C3%A7%C3%BCkbayrak-897123163/"
-        >
-          <!-- LINKEDIN ICON -->
-          <svg
-            width="24"
-            height="24"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M7 17V13.5V10"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M7 7.01L7.01 6.99889"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-        </a>
-
-        <a href="mailto:o.kucukbayrak@icloud.com">
-          <!-- MAIL ICON -->
-          <svg
-            width="24"
-            height="24"
-            stroke-width="1.5"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7 9L12 12.5L17 9"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-            <path
-              d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"
-              stroke="currentColor"
+      <div class="header">
+        <h1>Oğuzcan Küçükbayrak</h1>
+        <h5 class="subtitle">Fullstack Developer</h5>
+        <div class="links-container">
+          <a href="#" id="toggleDarkMode">
+            <svg
+              width="24"
+              height="24"
               stroke-width="1.5"
+              viewBox="0 0 60 60"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M34.82,56.11a23.86,23.86,0,0,1-9.38-1.9A2,2,0,0,1,27,50.53a19.87,19.87,0,0,0,7.82,1.58A20.16,20.16,0,0,0,46.59,48.3a24.12,24.12,0,0,1-16.2-35.91A20.16,20.16,0,0,0,14.71,32a19.91,19.91,0,0,0,3.88,11.87,2,2,0,0,1-3.23,2.37A24.12,24.12,0,0,1,34.66,7.89h0A2,2,0,0,1,36.5,9.07a2,2,0,0,1-.33,2.16,20.11,20.11,0,0,0,15,33.5h.13a2,2,0,0,1,1.83,1.19,2,2,0,0,1-.34,2.15A24.1,24.1,0,0,1,34.82,56.11Z"
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a target="_blank" href="https://github.com/okb1100">
+            <!-- GITHUB ICON -->
+            <svg
+              width="24"
+              height="24"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16 22.0268V19.1568C16.0375 18.68 15.9731 18.2006 15.811 17.7506C15.6489 17.3006 15.3929 16.8902 15.06 16.5468C18.2 16.1968 21.5 15.0068 21.5 9.54679C21.4997 8.15062 20.9627 6.80799 20 5.79679C20.4558 4.5753 20.4236 3.22514 19.91 2.02679C19.91 2.02679 18.73 1.67679 16 3.50679C13.708 2.88561 11.292 2.88561 8.99999 3.50679C6.26999 1.67679 5.08999 2.02679 5.08999 2.02679C4.57636 3.22514 4.54413 4.5753 4.99999 5.79679C4.03011 6.81549 3.49251 8.17026 3.49999 9.57679C3.49999 14.9968 6.79998 16.1868 9.93998 16.5768C9.61098 16.9168 9.35725 17.3222 9.19529 17.7667C9.03334 18.2112 8.96679 18.6849 8.99999 19.1568V22.0268"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M9 20.0267C6 20.9999 3.5 20.0267 2 17.0267"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/o%C4%9Fuzcan-k%C3%BC%C3%A7%C3%BCkbayrak-897123163/"
+          >
+            <!-- LINKEDIN ICON -->
+            <svg
+              width="24"
+              height="24"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7 17V13.5V10"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7 7.01L7.01 6.99889"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+
+          <a href="mailto:o.kucukbayrak@icloud.com">
+            <!-- MAIL ICON -->
+            <svg
+              width="24"
+              height="24"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M7 9L12 12.5L17 9"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <div class="about">
+          <h2 style="margin-bottom: 0;">About Me</h2>
+          <p style="font-size: 12px; margin: 0 0 4px 0;">
+          </p>
+          <p>
+            I am a self-taught software developer with a passion for web
+            technologies. I have a strong background in web and mobile
+            development and have worked on projects from a variety of
+            industries.
+          </p>
+
+          <p>
+            You can
+            <a href="mailto:o.kucukbayrak@icloud.com">send me an email</a> or
+            <!-- Calendly link widget begin -->
+            <link
+              href="https://assets.calendly.com/assets/external/widget.css"
+              rel="stylesheet"
             />
-          </svg>
-        </a>
+            <script
+              src="https://assets.calendly.com/assets/external/widget.js"
+              type="text/javascript"
+              async
+            ></script>
+            <a
+              href=""
+              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kucukbayrak/30min'});return false;"
+              >book a meeting with me</a
+            >
+            <!-- Calendly link widget end -->
+            if you are interested in working together.
+          </p>
+
+        </div>
+
+        <div class="projects">
+          <h2 style="margin-bottom: 0;">Portfolio</h2>
+          <p style="font-size: 12px; margin: 0 0 4px 0;">
+            Some of my public works are listed below.
+          </p>
+          <div class="scrollWrapper">
+            <div class="project">
+              <a target="_blank" href="https://www.gidacarsisirehberi.com/">
+                <h3>Izmir City Guide</h3>
+              </a>
+              <small>#flutter</small>
+              <p>
+                Developed the mobile application with Flutter and GetX library
+                from scratch.
+              </p>
+            </div>
+
+            <div class="project">
+              <a target="_blank" href="https://yourtraveltracker.co.uk/">
+                <h3>Your Travel Tracker</h3>
+              </a>
+              <small>#nodejs #mongodb</small>
+              <p>
+                Implemented security measures and done a general refactor of the
+                backend service.
+              </p>
+            </div>
+
+            <div class="project">
+              <a target="_blank" href="https://primehealthconcept.com/">
+                <h3>Prime Health Concept</h3>
+              </a>
+              <small>#nextjs #graphql #traefik</small>
+              <p>
+                Developed graphql queries for custom post types, created a build
+                pipeline for auto-release, implemented a reverse proxy.
+              </p>
+            </div>
+
+            <div class="project">
+              <a target="_blank" href="https://pastabin-okb1100.herokuapp.com/">
+                <h3>Pastabin</h3>
+              </a>
+              <small>#hobby #express #mongodb</small>
+              <p>Pastebin clone, syntax highlighting and stuff.</p>
+            </div>
+
+            <div class="project">
+              <a
+                target="_blank"
+                href="https://playlist-generator-okb1100.herokuapp.com/"
+              >
+                <h3>Playlist Generator</h3>
+              </a>
+              <small>#hobby #angularjs</small>
+              <p>
+                Generates playlists from subreddit posts and plays them in
+                order.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <script>
+      const userPrefersDarkScheme =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const bodyElement = document.querySelector("body");
+      const darkModeButton = document.querySelector("#toggleDarkMode");
+      if (window.localStorage) {
+        const theme = localStorage.getItem("oguz-js-org-theme");
+        const _pref = theme ? theme : userPrefersDarkScheme ? "dark" : "light";
+        bodyElement.className = _pref;
+      } else {
+        bodyElement.className = userPrefersDarkScheme ? "dark" : "light";
+      }
+      darkModeButton.addEventListener("click", () => {
+        if (window.localStorage) {
+          localStorage.setItem(
+            "oguz-js-org-theme",
+            bodyElement.className === "dark" ? "light" : "dark"
+          );
+        }
+        bodyElement.className =
+          bodyElement.className === "dark" ? "light" : "dark";
+      });
+    </script>
   </body>
 </html>
