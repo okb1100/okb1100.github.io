@@ -509,6 +509,14 @@
         bodyElement.className =
           bodyElement.className === "dark" ? "light" : "dark";
       });
+      window.onload = () => {
+        const _hash = window.location.hash.substring(1)
+        if (_hash === "meet") {
+          setTimeout(() => {
+            Calendly.initPopupWidget({url: 'https://calendly.com/kucukbayrak/30min'});return false;
+          }, 500)
+        }
+      }
     </script>
   </body>
 </html>
