@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>/home/okb</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-43MNZ998W0"
@@ -45,12 +44,6 @@
         }
       }
 
-      .main {
-        /* background-size: 70px 123px; */
-        /* background-position: 0 0, 0 0, 35px 61px, 35px 61px, 0 0, 35px 61px; */
-        /* animation: move 15s linear infinite; */
-      }
-
       .footer {
         animation: fadeIn 1s ease-in-out;
         animation-delay: 1s;
@@ -76,6 +69,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
       }
 
       .header {
@@ -85,7 +79,6 @@
         flex-direction: column;
         align-items: center;
         padding-top: 5%;
-        animation: goTop 1s;
         animation-timing-function: cubic-bezier(0.5, 0.885, 0.6, 1.22);
         animation-delay: 1s;
         animation-fill-mode: both;
@@ -288,66 +281,8 @@
           <a
             target="_blank"
             href="https://www.linkedin.com/in/o%C4%9Fuzcan-k%C3%BC%C3%A7%C3%BCkbayrak-897123163/"
-          >
-            <!-- LINKEDIN ICON -->
-            <svg
-              width="24"
-              height="24"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8Z"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7 17V13.5V10"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M11 17V13.75M11 10V13.75M11 13.75C11 10 17 10 17 13.75V17"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7 7.01L7.01 6.99889"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
           </a>
 
-          <a href="mailto:o.kucukbayrak@icloud.com">
-            <!-- MAIL ICON -->
-            <svg
-              width="24"
-              height="24"
-              stroke-width="1.5"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M7 9L12 12.5L17 9"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2 17V7C2 5.89543 2.89543 5 4 5H20C21.1046 5 22 5.89543 22 7V17C22 18.1046 21.1046 19 20 19H4C2.89543 19 2 18.1046 2 17Z"
-                stroke="currentColor"
-                stroke-width="1.5"
-              />
-            </svg>
-          </a>
 
           <a
             href=""
@@ -387,102 +322,6 @@
         </div>
       </div>
 
-      <div class="bottom">
-        <div class="about">
-          <h2 style="margin-bottom: 0">About Me</h2>
-          <p style="font-size: 12px; margin: 0 0 4px 0"></p>
-          <p>
-            I am a self-taught software developer with a passion for web
-            technologies. I have a strong background in web and mobile
-            development and have worked on projects from a variety of
-            industries.
-          </p>
-
-          <p>
-            You can
-            <a href="mailto:o.kucukbayrak@icloud.com">send me an email</a> or
-            <!-- Calendly link widget begin -->
-            <link
-              href="https://assets.calendly.com/assets/external/widget.css"
-              rel="stylesheet"
-            />
-            <script
-              src="https://assets.calendly.com/assets/external/widget.js"
-              type="text/javascript"
-              async
-            ></script>
-            <a
-              href=""
-              onclick="Calendly.initPopupWidget({url: 'https://calendly.com/kucukbayrak/30min'});return false;"
-              >book a meeting with me</a
-            >
-            <!-- Calendly link widget end -->
-            if you are interested in working together.
-          </p>
-        </div>
-
-        <!-- <div class="projects">
-          <h2 style="margin-bottom: 0">Portfolio</h2>
-          <p style="font-size: 12px; margin: 0 0 4px 0">
-            Some of my public works are listed below.
-          </p>
-          <div class="scrollWrapper">
-            <div class="project">
-              <a target="_blank" href="https://www.gidacarsisirehberi.com/">
-                <h3>Izmir City Guide</h3>
-              </a>
-              <small>#flutter</small>
-              <p>
-                Developed the mobile application with Flutter and GetX library
-                from scratch.
-              </p>
-            </div>
-<!--
-            <div class="project">
-              <a target="_blank" href="https://yourtraveltracker.com/">
-                <h3>Your Travel Tracker</h3>
-              </a>
-              <small>#nodejs #mongodb</small>
-              <p>
-                Implemented security measures and done a general refactor of the
-                backend service.
-              </p>
-            </div>
--->
-            <!-- <div class="project">
-              <a target="_blank" href="https://primehealthconcept.com/">
-                <h3>Prime Health Concept</h3>
-              </a>
-              <small>#nextjs #graphql #traefik</small>
-              <p>
-                Developed graphql queries for custom post types, created a build
-                pipeline for auto-release, implemented a reverse proxy.
-              </p>
-            </div> -->
-
-            <div class="project">
-              <a target="_blank" href="https://pastabin-okb1100.herokuapp.com/">
-                <h3>Pastabin</h3>
-              </a>
-              <small>#hobby #express #mongodb</small>
-              <p>Pastebin clone, syntax highlighting and stuff.</p>
-            </div>
-
-            <div class="project">
-              <a
-                target="_blank"
-                href="https://playlist-generator-okb1100.herokuapp.com/"
-              >
-                <h3>Playlist Generator</h3>
-              </a>
-              <small>#hobby #angularjs</small>
-              <p>
-                Generates playlists from subreddit posts and plays them in
-                order.
-              </p>
-            </div>
-          </div>
-        </div> -->
       </div>
     </div>
 
